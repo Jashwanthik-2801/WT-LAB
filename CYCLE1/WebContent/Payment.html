@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Payment Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<style>
+body{
+ background-image: url('images/book2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  margin-left:260px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+input[type=text], input[type=password],input[type=date]{
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+<h1 style="color:white;font-size:40px;margin-left:290px;">PAYMENT FORM<br></h1><br>
+  <div class="container">
+    <label for="bname"><b style="color:black">CreditCard Number&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Enter CreditCard Number" name="bname" required><br>
+
+    <label for="ps"><b style="color:black">Expiry Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Enter ExpiryDate " name="ps" required><br>
+     
+    <label for="psw"><b style="color:black">CVV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="password" placeholder="Enter CVV" name="psw" required><br>
+     
+     <label for="pw"><b style="color:black">Total Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Enter Total Amount" name="pw" required><br><br>
+    <a href="C:\Users\srijan\Desktop\CNWT LAB\CYCLE1\WebContent\Confirmation.html"><button type="submit">Pay Here</button></a><br>
+ 
+  </div>
+
+  
+
+
+</body>
+</html>
