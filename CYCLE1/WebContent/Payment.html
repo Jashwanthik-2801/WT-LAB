@@ -23,7 +23,7 @@ button {
   border: none;
   cursor: pointer;
   width: 20%;
-  margin-left:260px;
+  margin-left:240px;
 }
 
 button:hover {
@@ -38,26 +38,99 @@ input[type=text], input[type=password],input[type=date]{
 	box-sizing: border-box;
 }
 </style>
+<script>
+function validateForm(){
+	  var creditcardno = document.forms["PaymentForm"]["creditcardno"].value;
+	  var expirydate = document.forms["PaymentForm"]["expirydate"].value;  
+	  var cvv = document.forms["PaymentForm"]["cvv"].value;                    
+	  var amount = document.forms["PaymentForm"]["amount"].value;  
+	  if(creditcardno=="" && expirydate=="" && cvv == ""&& amount==""){
+		  alert("All details are Required!!!");
+		  return false;
+	  }
+	 
+	 
+	  if (creditcardno == "") {
+		    alert("Please enter the creditcard no!!!");
+		    return false;
+		  }
+	  if(creditcardno.length < 16 || creditcardno.length > 16){
+		  alert("Please enter valid number");
+		  return false;
+	  }
+	  if(expirydate == ""){
+		  alert("Please enter expiry date");
+		  return false;
+	  }
+	  
+	  if (cvv == "") {
+		    alert("Please enter the cvv no!!!");
+		    return false;
+		  }
+	  if (amount == "") {
+		    alert("Please enter the amount!!!");
+		    return false;
+		  }
+} 
+function cvalid(){
+	  var creditcardno = document.forms["PaymentForm"]["creditcardno"].value;
+	  if(creditcardno == ""){
+		  alert("Please Enter Credit card Number!!!");
+		  return false;
+	  }
+
+}	
+function evalid(){
+	  var expirydate = document.forms["PaymentForm"]["expirydate"].value;
+	  if(expirydate == ""){
+		  alert("Please Enter expirydate of card!!!");
+		  return false;
+	  }
+
+}	
+function cvvalid(){
+	  var cvv = document.forms["PaymentForm"]["cvv"].value;
+	  if(cvv == ""){
+		  alert("Please Enter CVV of card!!!");
+		  return false;
+	  }
+
+}	
+function avalid(){
+	  var amount = document.forms["PaymentForm"]["amount"].value;
+	  if(amount == ""){
+		  alert("Please Enter The Amount to be paid!!!");
+		  return false;
+	  }
+
+}	
+</script>
 </head>
 <body>
-<h1 style="color:white;font-size:40px;margin-left:290px;">PAYMENT FORM<br></h1><br>
-  <div class="container">
-    <label for="bname"><b style="color:black">CreditCard Number&nbsp;&nbsp;</b></label>
-    <input type="text" placeholder="Enter CreditCard Number" name="bname" required><br>
-
-    <label for="ps"><b style="color:black">Expiry Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-    <input type="text" placeholder="Enter ExpiryDate " name="ps" required><br>
-     
-    <label for="psw"><b style="color:black">CVV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-    <input type="password" placeholder="Enter CVV" name="psw" required><br>
-     
-     <label for="pw"><b style="color:black">Total Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-    <input type="text" placeholder="Enter Total Amount" name="pw" required><br><br>
-    <a href="Confirmation.html"><button type="submit">Pay Here</button></a><br>
- 
+<h1 style="color:white;font-size:40px;margin-left:250px;">PAYMENT FORM<br></h1><br>
+   <form align="center" action="Confirmation.html" name = "PaymentForm" onsubmit="return validateForm()" method = "post">
+   <div class="form-group">
+    <label for="cno"><b style="color:black">CreditCard Number&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Enter CreditCard Number" class ="form-control" id = "creditcardno" name="cno" onblur="return cvalid()"><br>
+    </div>
+   <div class="form-group">
+    <label for="ex"><b style="color:black">Expiry Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Enter ExpiryDate " class = "form-control" id = "expirydate" name="ex" onblur="return evalid()" ><br>
+   </div>
+   <div class="form-group">  
+    <label for="cvv"><b style="color:black">CVV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="password" placeholder="Enter CVV" class = "form-control" id = "cvv" name="cvv" onblur="cvvalid()" ><br>
+    </div>
+   <div class="form-group">  
+     <label for="amount"><b style="color:black">Total Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+    <input type="text" placeholder="Enter Total Amount"  class = "form-control" id = "amount" name="amount" onblur = "avalid()"><br><br>
+   
   </div>
-
+  <a href="Confirmation.html"><button type="submit">Pay Here</button></a><br>
+ 
   
+  </form>
+ 
 
 
 </body>

@@ -23,7 +23,7 @@ button {
   border: none;
   cursor: pointer;
   width: 20%;
-  margin-left:300px;
+  margin-left:240px;
 }
 input[type=text], input[type=number]{
 	width: 50%;
@@ -34,12 +34,31 @@ input[type=text], input[type=number]{
 	box-sizing: border-box;
 }
 </style>
+<script>
+function validateForm(){
+	var quantity = document.getElementById("quantity").value;
+	var book = document.getElementById("book").value;
+	
+	if(quantity == "" && book == ""){
+		alert("All details are required!!");
+		return false;
+	}
+	if (quantity == "") {
+        alert("Quantity Should be greater than zero!!");
+        return false;
+    }
+	return true;
+}
+
+</script>
 </head>
 <body>
 <br>
-<h1 style="color:White;font-size:40px;margin-left:270px;">SHOPPING CART</h1><br><br>
-  <label for="cars"><b style="font-size:20px;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Book Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-  <select name="cars" id="cars" style="width:50%;padding:12px 20px;border: 1px solid #ccc;">
+<h1 style="color:White;font-size:40px;margin-left:250px;"><b>SHOPPING CART</b></h1><br><br>
+<form align="center" action="Payment.html" name = "shoppingcartForm" onsubmit="return validateForm()" method="post">
+
+  <label for="books"><b style="font-size:20px;" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Book Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+  <select name="books" id="book" style="width:50%;padding:12px 20px;border: 1px solid #ccc;">
     <optgroup label="Programming Books">
       <option value="PPS">Select a book</option>
       <option value="PPS">PPS</option>
@@ -55,12 +74,16 @@ input[type=text], input[type=number]{
       <option value="saab">MsSQL Server</option>
     </optgroup>
   </select>
+
   <br>
+  
   <label for="quantity"><b style="font-size:20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
-  <input type="number" placeholder="Enter Quantity" style="color:black;" name="uname" required><br>
+  <input type="number"  placeholder="Enter Quantity" style="color:black;" name="quantity" id = "quantity" ><br>
   <br>
-<a href="Payment.html"><button type="submit">Proceed To Pay</button></a><br><br>
+ <a href="Payment.html"><button type="submit">Proceed To Pay</button></a><br><br>
  
+ </form>
+
   <p><b style="margin-left:30px;">***NOTE : COST OF EVERY BOOK IS Rs.300</b></p>
 
  

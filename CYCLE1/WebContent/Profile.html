@@ -30,7 +30,7 @@ button {
 	border: none;
 	cursor: pointer;
 	width: 20%;
-	margin-left:230px;
+	margin-left:200px;
 	
 }
 body {
@@ -42,14 +42,83 @@ body {
 button:hover {
 	opacity: 0.8;
 }
-
-
-
-
-
-
-
 </style>
+<script>
+function validateForm() {
+  var name = document.forms["ProfileForm"]["name"].value;
+  var email = document.forms["ProfileForm"]["email"].value;  
+  var mobileno = document.forms["ProfileForm"]["mobileno"].value;
+  var address = document.forms["ProfileForm"]["address"].value;  
+                  
+  
+ 
+  if(name=="" && email=="" && mobileno=="" &&  address == ""){
+	  alert("All details are Required!!!");
+	  return false;
+  }
+ 
+  if (name == "") {
+	    alert("Please enter your name!!!");
+	    return false;
+	  }
+  if(name.length<6 || name.length>36){
+	  alert("length of the name should not be less then 6 or greater then 36");
+	    return false;
+  }
+  if(email == ""){
+	  alert("Please enter Your mail Id");
+	  return false;
+  }
+  if(email.length < 7 || email.length > 25){
+	  alert("Please enter valid email Address");
+	  return false;
+  }
+  
+  if (mobileno == "") {
+		    alert("Please enter your phone number!!!");
+		    return false;
+   }
+  if(mobileno.length < 10 || mobileno.length > 10){
+	  alert("Please enter valid mobileno");
+	  return false;
+  }
+  if (address == "") {
+	    alert("Please enter your address!!!");
+	    return false;
+	  }
+  
+ 
+  
+}
+function nvalid(){
+	var name = document.forms["ProfileForm"]["name"].value;
+	if(name == ""){
+		alert("Please Enter Your Name!!!");
+		return false;
+	}
+}
+function evalid(){
+	var email = document.forms["ProfileForm"]["email"].value;
+	if(email == ""){
+		alert("Please Enter Your email!!!");
+		return false;
+	}
+}
+function mvalid(){
+	var mobileno = document.forms["ProfileForm"]["mobileno"].value;
+	if(mobileno == ""){
+		alert("Please Enter Your mobileno!!!");
+		return false;
+	}
+}
+function avalid(){
+	var address = document.forms["ProfileForm"]["address"].value;
+	if(address == ""){
+		alert("Please Enter Your address!!!");
+		return false;
+	}
+}
+</script>
 </head>
 <body>
     
@@ -76,34 +145,33 @@ button:hover {
  
 </nav>
 <br>
-<h2 style="color:white;font-size:40px;margin-left:350px;"><b>Profile Form</b></h2>
-<br>
-		<div class="container">
-			<label for="uname"><b style="color:black">Name</b></label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			<input type="text" placeholder="Enter Name" name="uname" required><br>
+	<h2 style="color:white;font-size:40px;margin-left:250px;"><b>Profile Form</b></h2><br>
 
-            <label for="em"><b style="color:black">Email</b></label> &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; 
-			<input type="text" placeholder="Email" name="em" required><br>
-			
-			
-			<label for="psw1"><b style="color:black">MobileNo</b></label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-			<input type="text" placeholder="Mobile No" name="psw1" required><br>
-            
-            <label for="add"><b style="color:black">Address</b></label>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-			<input type="text" placeholder="Address" name="add" required><br>
-             
-             <label for="psw"><b style="color:black">City</b></label>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-			<input type="text" placeholder="Enter City" name="psw" required><br> 
-			
-           
-            <br>
-            
-			<a href="Book.html"><button type="submit">Submit</button></a><br>
-   
+	
+      <form class="form-conatiner" align="center" name="ProfileForm" action="Book.html" onsubmit="return validateForm()" method="post">
+		<div class="form-group">
+			<label for="name"><b style="color:black">Name</b></label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			<input type="text" placeholder="Enter Name" class = "form-control" name="name" id = "name" onblur="return nvalid()"><br>
+        </div>
+        <div class="form-group">
+            <label for="email"><b style="color:black">Email</b></label> &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; 
+			<input type="text" placeholder="Enter Email" name="email" class = "form-control" id="email" onblur="return evalid()"><br>
 		</div>
+		<div class="form-group">
+			<label for="mobileno"><b style="color:black">Mobile No</b></label>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			<input type="text" placeholder="Enter Mobile Number" class = "form-control" name="mobileno" id = "mobileno" onblur="return mvalid()"><br> 
+		</div>
+		<div class="form-group">	
+			<label for="address"><b style="color:black">Address</b></label>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+			<input type="text" placeholder="Enter Address" class = "form-control" name="address" id = "address" onblur="return avalid()"><br>
+        </div>
+          
+       
+		<a href="Book.html"><button type="submit">Submit</button></a><br>
+   	
+		</form>	
 
-
-		<div class="container" style="background-color: #f1f1f1"></div>
+		
 	
 </body>
 </html>
