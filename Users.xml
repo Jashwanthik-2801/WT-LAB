@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+	<user id="1">
+		<Name> Harry </Name>
+		<mobileno>8798769750</mobileno>
+		<age>20</age>
+	</user>
+	<user id="2">
+		<Name>Chandhana</Name>
+		<mobileno>7689567890</mobileno>
+		<age>25</age>
+	</user>
+	<user id="3">
+		<Name>Robert</Name>
+		<mobileno>9433797460</mobileno>
+		<age>35</age>
+	</user>
+	<user id="4">
+		<Name>Ron</Name>
+		<mobileno>9090909009</mobileno>
+		<age>50</age>
+	</user>
+	<user id="5">
+		<Name>Abhinav</Name>
+		<mobileno>7689768978</mobileno>
+		<age>32</age>
+	</user>
+	<user id="6">
+		<Name>Nishitha</Name>
+		<mobileno>8767987689</mobileno>
+		<age>18</age>
+	</user>
+	<user id="7">
+		<Name>Keerthi</Name>
+		<mobileno>6787879090</mobileno>
+		<age>35</age>
+	</user>
+	<user id="8">
+		<Name>Uday</Name>
+		<mobileno>Kumar</mobileno>
+		<age>Miyapur</age>
+	</user>
+	<user id="9">
+		<Name>Thanuj</Name>
+		<mobileno>9898989898</mobileno>
+		<age>40</age>
+	</user>
+	<user id="10">
+		<Name>Uma </Name>
+		<mobileno>7987987980</mobileno>
+		<age>45</age>
+	</user>
+</users>
+		
+
